@@ -1,0 +1,192 @@
+:root {
+    --bg: #08080a;
+    --primary: #ff0055;
+    --accent: #00f2ff;
+    --glass: rgba(255, 255, 255, 0.03);
+    --border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    background-color: var(--bg);
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Custom Cursor */
+.cursor-dot, .cursor-outline {
+    position: fixed;
+    top: 0; left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+.cursor-dot { width: 8px; height: 8px; background: #fff; }
+.cursor-outline { 
+    width: 40px; height: 40px; 
+    border: 2px solid rgba(255, 255, 255, 0.3); 
+}
+
+/* Background Effect */
+.bg-glow {
+    position: fixed;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(255,0,85,0.15) 0%, transparent 70%);
+    z-index: -1;
+    filter: blur(50px);
+    animation: pulse 8s infinite alternate;
+}
+
+@keyframes pulse {
+    from { transform: translate(-20%, -20%); }
+    to { transform: translate(20%, 20%); }
+}
+
+/* Main UI */
+.container { width: 100%; display: flex; justify-content: center; padding: 20px; }
+
+.glass-card {
+    background: var(--glass);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 60px 40px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+}
+
+.top-tag {
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.8rem;
+    line-height: 0.9;
+    margin-bottom: 20px;
+}
+
+.outline-text {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.bn-sub {
+    font-family: 'Hind Siliguri', sans-serif;
+    color: #888;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+
+/* Form Styling */
+.input-wrapper {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    font-family: 'Hind Siliguri', sans-serif;
+    font-size: 1.6rem;
+    color: #fff;
+    text-align: center;
+    outline: none;
+    padding: 10px;
+}
+
+.line {
+    height: 1px;
+    width: 50%;
+    background: #333;
+    margin: 0 auto;
+    transition: 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+input:focus ~ .line {
+    width: 100%;
+    background: var(--accent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.btn-primary {
+    background: #fff;
+    color: #000;
+    padding: 18px 40px;
+    border: none;
+    border-radius: 100px;
+    font-weight: 700;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.4s ease;
+}
+
+.btn-primary:hover {
+    background: var(--primary);
+    color: #fff;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(255, 0, 85, 0.3);
+}
+
+/* Result Design */
+.dynamic-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--accent);
+    margin: 10px 0 30px;
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.wish-box {
+    background: rgba(255,255,255,0.02);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.bn-wish {
+    font-family: 'Hind Siliguri', sans-serif;
+    line-height: 1.8;
+    color: #bbb;
+    font-size: 1.1rem;
+}
+
+.btn-reload {
+    margin-top: 30px;
+    background: transparent;
+    border: none;
+    color: #444;
+    text-decoration: underline;
+    font-size: 0.8rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.8rem; }
+    .glass-card { padding: 40px 20px; }
+    .cursor-dot, .cursor-outline { display: none; }
+    * { cursor: auto; }
+}
