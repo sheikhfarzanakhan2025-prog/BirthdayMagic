@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Magic | Premium Experience</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;600&family=Playfair+Display:wght@700&family=Montserrat:wght@300;500;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <div class="glass-card">
+            
+            <div id="inputView">
+                <span class="top-tag">EST. 2026 • CELEBRATION</span>
+                <h1 class="hero-title">Birthday<br><span class="outline-text">Vibes.</span></h1>
+                <p class="bn-sub">একটি জাদুকরী মুহূর্তের জন্য আপনার নামটি লিখুন</p>
+                
+                <div class="input-wrapper">
+                    <input type="text" id="userName" placeholder="এখানে নাম লিখুন..." autocomplete="off">
+                    <div class="line"></div>
+                </div>
+
+                <button class="btn-primary" onclick="startMagic()">
+                    ম্যাজিক দেখুন 
+                    <span class="arrow">→</span>
+                </button>
+            </div>
+
+            <div id="resultView" style="display: none; opacity: 0;">
+                <h2 class="welcome-label">স্বাগতম,</h2>
+                <h1 id="displayName" class="dynamic-name"></h1>
+                <div class="wish-box">
+                    <p class="bn-wish">আমার জীবনের এই বিশেষ দিনে আপনার উপস্থিতি আমার আনন্দকে বহুগুণ বাড়িয়ে দিয়েছে। আমার পাশে থাকার জন্য আপনাকে জানাই আন্তরিক ধন্যবাদ। ❤️</p>
+                </div>
+                <button class="btn-reload" onclick="location.reload()">আবার শুরু করুন</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
